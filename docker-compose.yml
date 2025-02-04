@@ -1,4 +1,14 @@
 services:
+  proxy:
+    image: nginx:1.27.2
+    volumes:
+      - ./nginx/conf-proxy:/etc/nginx/conf.d/
+      - ./nginx/certs:/etc/nginx/certs/
+    ports:
+      - 443:443
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
   ollama:
     image: ollama/ollama:0.5.7-rocm
     ports:
