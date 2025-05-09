@@ -1,2 +1,3 @@
 ollama/
 nginx/certs/
+redis-data/
