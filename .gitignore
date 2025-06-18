@@ -1,3 +1,4 @@
 ollama/
 nginx/certs/
 redis-data/
+chat-api/*.jar
