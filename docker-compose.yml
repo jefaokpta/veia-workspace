@@ -31,6 +31,15 @@ services:
       - REDIS_ARGS=--requirepass iasmin123
     restart: unless-stopped
 
+  redis-dev:
+    image: redis/redis-stack:7.4.0-v3
+    ports:
+      - 6380:6379
+    volumes:
+      - ./redis-data-dev:/data
+    environment:
+      - REDIS_ARGS=--requirepass iasmin123
+
   zookeeper:
     image: confluentinc/cp-zookeeper:7.8.0
     hostname: zookeeper
